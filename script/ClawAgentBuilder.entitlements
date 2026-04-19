@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- Mac App Store requires the app sandbox. -->
+    <key>com.apple.security.app-sandbox</key>
+    <true/>
+
+    <!-- The only disk write we do is the generated workspace folder the
+         user picks via NSOpenPanel. This entitlement grants a
+         security-scoped bookmark to that specific folder. -->
+    <key>com.apple.security.files.user-selected.read-write</key>
+    <true/>
+
+    <!-- Outbound HTTPS only: used by ProviderKeyTester to hit
+         api.anthropic.com / api.openai.com / etc. when the user taps
+         "Test key" on a provider card. No inbound network. -->
+    <key>com.apple.security.network.client</key>
+    <true/>
+</dict>
+</plist>
